@@ -1,0 +1,46 @@
+services:
+  db:
+    image: postgres:16
+    restart: always
+    environment:
+      POSTGRES_DB: doc_mgmt_db
+      POSTGRES_USER: doc_mgmt_user
+      POSTGRES_PASSWORD: doc_mgmt_pass
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+  django:
+    build: .
+    container_name: django_app
+    command: sh -c "python manage.py migrate &&
+             gunicorn doc_mgmt.wsgi:application --bind 0.0.0.0:8000"
+    volumes:
+      - .:/app
+      - ./uploaded_files:/app/uploaded_files
+    ports:
+      - "8000:8000"
+    depends_on:
+      - redis
+    restart: always
+
+  celery:
+    build: .
+    container_name: celery_worker
+    command: celery -A doc_mgmt worker --loglevel=info
+    volumes:
+      - .:/app
+    depends_on:
+      - redis
+    restart: always
+
+  redis:
+    image: redis:7-alpine
+    container_name: redis_server
+    ports:
+      - "6379:6379"
+    restart: always
+
+volumes:
+  postgres_data:

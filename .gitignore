@@ -1,0 +1,10 @@
+**/migrations/
+**/migrations/*.py
+!**/migrations/__init__.py  # Keep __init__.py so Django recognizes the module
+
+__pycache__/
+*.py[cod]
+
+.vscode/
+
+.cache/
