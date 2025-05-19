@@ -19,6 +19,8 @@ User and document management using Django, PostgreSQL, Celery, Redis
 - Trigger document ingestion (Admin/Editor)
 - View ingestion status and timestamps
 
+***
+
 ## Setup Instructions for Backend - Django
 
 ### 1. Make sure docker desktop is running successfully, Docker Compose build and run command
