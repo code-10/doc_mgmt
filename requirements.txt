@@ -29,4 +29,5 @@ redis>=5.0
 gunicorn
 psycopg2-binary
 django-cors-headers
-
+pytest 
+pytest-django

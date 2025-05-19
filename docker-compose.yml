@@ -42,5 +42,21 @@ services:
       - "6379:6379"
     restart: always
 
+  test:
+    build:
+      context: .
+    container_name: doc-mgmt-tests
+    command: >
+      sh -c "pytest"
+    volumes:
+      - ./doc_mgmt_backend:/app
+    depends_on:
+      - db
+    environment:
+      POSTGRES_DB: doc_mgmt
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      DATABASE_HOST: db
+
 volumes:
   postgres_data:
