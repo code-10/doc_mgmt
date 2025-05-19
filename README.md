@@ -1,5 +1,23 @@
 # doc_mgmt
-User and document management using Django
+User and document management using Django, PostgreSQL, Celery, Redis
+
+## Features
+
+### User Management
+- User Registration and Login with JWT Authentication
+- Role-based Access Control: `Admin`, `Editor`, `Viewer`
+- Session management with access token
+
+### Document Management
+- Upload documents with titles
+- View list of uploaded documents
+- View file details (title, uploaded at, uploaded by)
+- **Edit document title or replace file** (only by Admin or Editor)
+- **Delete documents** (only by Admin or Editor)
+
+### Ingestion Management
+- Trigger document ingestion (Admin/Editor)
+- View ingestion status and timestamps
 
 ## Setup Instructions for Backend - Django
 
