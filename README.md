@@ -60,7 +60,7 @@ Visit `http://127.0.0.1:8000/` in your browser
 
 ![view_ingestions](https://github.com/user-attachments/assets/51f1c46d-6f8a-4568-af32-f5a2292e39b0)
 
-####Please click on username to view admin functionality
+Please click on username to view admin functionality
 ![admin_view](https://github.com/user-attachments/assets/ff0a7591-7b22-44b5-bb0e-0f13222003f8)
 
 ![update_role](https://github.com/user-attachments/assets/65a48a0f-3d00-425a-bbf9-630d6f759e99)
