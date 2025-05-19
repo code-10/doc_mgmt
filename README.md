@@ -21,13 +21,13 @@ venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-### 4. Apply migrations
+### 3. Apply migrations
 ```bash
 python manage.py makemigrations
 python manage.py migrate
 ```
 
-### 5. Run the application
+### 4. Run the application
 ```bash
 python manage.py runserver
 ```
